@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('hello', function () {
-    return view('hello.index');
-});
+Route::get('hello', 'App\Http\Controllers\HelloController@index');
