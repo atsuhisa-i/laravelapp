@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,5 +25,13 @@ class Person extends Model
     public function scopeAgeLessThan($query, $n)
     {
         return $query->where('age', '<=', $n);
+    }
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('age', function (Builder $builder){
+            $builder->where('age', '>', 20);
+        });
     }
 }
