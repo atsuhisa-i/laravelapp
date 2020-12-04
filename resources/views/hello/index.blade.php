@@ -1,4 +1,8 @@
 @extends('layouts.helloapp')
+<style>
+  .pagination { font-size:10pt; }
+  .pagination li { display:inline-block }
+</style>
 
 @section('title', 'Index')
 
@@ -18,6 +22,7 @@
     </tr>
   @endforeach
   </table>
+  {{ $items->links() }}
 @endsection
 
 @section('footer')
