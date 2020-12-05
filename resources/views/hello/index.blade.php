@@ -31,7 +31,7 @@
     </tr>
   @endforeach
   </table>
-  {{ $items->appends(['sort' => $sort])->links('pagination::bootstrap-4') }}
+  {{ $items->appends(['sort' => $sort])->links('vendor.pagination.semantic-ui') }}
 @endsection
 
 @section('footer')
