@@ -6,6 +6,7 @@
   tr th a:visited { color: white; }
   tr th a:hover { color: white; }
   tr th a:active { color: white; }
+  path {width:15px;}
 </style>
 
 @section('title', 'Index')
@@ -30,7 +31,7 @@
     </tr>
   @endforeach
   </table>
-  {{ $items->appends(['sort' => $sort])->links() }}
+  {{ $items->appends(['sort' => $sort])->links('pagination::bootstrap-4') }}
 @endsection
 
 @section('footer')
