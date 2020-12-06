@@ -30,12 +30,10 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
 
-        $factory->define(App\Models\Person::class,function(Faker $faker){
-            return [
-                'name' => $faker->name,
-                'mail' => $faker->safeEmail,
-                'age' => random_int(1,99),
-            ];
-        });
+        return [
+            'name' => $this->$faker->name,
+            'mail' => $this->$faker->safeEmail,
+            'age' => random_int(1,99),
+        ];
     }
 }
